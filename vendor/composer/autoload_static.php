@@ -388,7 +388,7 @@ class ComposerStaticInit209c9a6c992147f227a4719b7277dc6d
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Departemen' => __DIR__ . '/../..' . '/app/Departemen.php',
+        'App\\Cuti' => __DIR__ . '/../..' . '/app/Cuti.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Golongan' => __DIR__ . '/../..' . '/app/Golongan.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -407,8 +407,8 @@ class ComposerStaticInit209c9a6c992147f227a4719b7277dc6d
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Jabatan' => __DIR__ . '/../..' . '/app/Jabatan.php',
         'App\\Pegawai' => __DIR__ . '/../..' . '/app/Pegawai.php',
+        'App\\Pelatihan' => __DIR__ . '/../..' . '/app/Pelatihan.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartemenJabatanTable extends Migration
+class CreateCutiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateDepartemenJabatanTable extends Migration
      */
     public function up()
     {
-        Schema::create('departemen_jabatan', function (Blueprint $table) {
+        Schema::create('cuti', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('jabatan_id')->unsigned();
-            $table->integer('departemen_id')->unsigned();
+            $table->enum('jenis', ['Cuti Sakit','Cuti Tahunan','Cuti Harian','Cuti Bulanan']);
+            $table->date('tgl_pengajuan');
+            $table->integer('hari');
+            $table->enum('status',['ditolak','disetujui','menunggu']);
+            
+            $table->integer('pegawai_id');
+
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ class CreateDepartemenJabatanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departemen_jabatan');
+        Schema::dropIfExists('cutis');
     }
 }

@@ -26,12 +26,12 @@ class CreatePegawaiTable extends Migration
             $table->string('email')->nullable();
             $table->enum('gol_darah', ['O','A','B','AB']);
             $table->enum('agama', ['Islam','Kristen','Hindu','Buddha']);
-            //foreign key
-            // $table->string('golongan_id')->unsigned();
-            // $table->foreign('golongan_id')
-            //         ->references('id')->on('golongan')
-            //         ->onDelete('cascade');
-            $table->string('golongan_id');
+            $table->string('jabatan',50);
+            $table->string('departemen',50);
+
+            //menghubungkan dengan golongan
+            $table->integer('golongan_id')->unsigned();
+        
 
 
             $table->timestamps();

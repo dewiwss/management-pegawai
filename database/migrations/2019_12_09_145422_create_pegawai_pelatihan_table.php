@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartemenTable extends Migration
+class CreatePegawaiPelatihanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateDepartemenTable extends Migration
      */
     public function up()
     {
-        Schema::create('departemen', function (Blueprint $table) {
+        Schema::create('pegawai_pelatihan', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kode_departemen');
-            $table->string('nama_departemen');
+            $table->integer('pegawai_id');
+            $table->integer('pelatihan_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateDepartemenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departemen');
+        Schema::dropIfExists('pegawai_pelatihan');
     }
 }
