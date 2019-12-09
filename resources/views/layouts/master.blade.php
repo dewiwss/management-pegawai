@@ -115,10 +115,7 @@
           </div>
         </div>
         <!-- Navigation -->
-        @if(auth=='admin')
-        @include('layouts.includes.sidebar.admin_navs')
-        @else
-        @include('layouts.includes.sidebar.guest_navs')
+        @include('layouts.includes.sidebar')
         <!-- Divider -->
         <hr class="my-3">
 

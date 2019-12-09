@@ -20,8 +20,6 @@ Auth::routes();
 Route::get('/dashboard',function(){
     return view('dashboard');
 });
-Route::get('/pegawai',function(){
-    return view('pegawai.index');
-});
+Route::get('/pegawai','PegawaiController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
