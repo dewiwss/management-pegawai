@@ -13,6 +13,6 @@ class Pelatihan extends Model
      * Method many to many.. pelatihan -> hasMany pegawai
      */
     public function pegawai(){
-        return $this->hasMany(Pegawai::class);
+        return $this->belongsToMany(Pegawai::class,'pegawai_pelatihan');
     }
 }

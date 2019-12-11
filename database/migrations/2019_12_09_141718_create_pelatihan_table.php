@@ -15,13 +15,14 @@ class CreatePelatihanTable extends Migration
     {
         Schema::create('pelatihan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('kode_pelatihan');
             $table->string('nama_pelatihan');
             $table->string('tempat');
             $table->string('instruktur');
             $table->date('mulai_pelatihan');
             $table->date('akhir_pelatihan');
 
-            $table->integer('pegawai_id');
+            // $table->string('pegawai');
 
             $table->timestamps();
         });

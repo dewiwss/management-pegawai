@@ -15,7 +15,7 @@ class CreatePegawaiTable extends Migration
     {
         Schema::create('pegawai', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('nip');
+            $table->bigInteger('nip')->unique();
             $table->string('nama', 100);
             $table->string('alamat', 100);
             $table->date('tgl_lahir');
@@ -28,6 +28,7 @@ class CreatePegawaiTable extends Migration
             $table->enum('agama', ['Islam','Kristen','Hindu','Buddha']);
             $table->string('jabatan',50);
             $table->string('departemen',50);
+            $table->string('pelatihan');
 
             //menghubungkan dengan golongan
             $table->integer('golongan_id')->unsigned();
