@@ -18,6 +18,7 @@ class PegawaiController extends Controller
             $pegawai =  Pegawai::orderby('nama','asc');
         }
         $pegawai = $pegawai->paginate(5);
+        // dd($pegawai);
         $pegawai->appends($request->only('cari'));
 
         return view('pegawai.index',compact('pegawai'));
@@ -31,9 +32,35 @@ class PegawaiController extends Controller
     public function creating(Request $request){
         $pegawai=$request->all();
         Pegawai::create($pegawai);
-        // Pegawai::create($request::all());
-
         return redirect('/pegawai')->with('Success','Data berhasil disimpan!!!');
+
+    }
+
+    public function detail($id){
+        $pegawai = Pegawai::find($id);
+        $pelatihan = Pelatihan::all();
+        $golongan = Golongan::all();
+        return view('pegawai.detail',compact('pelatihan','golongan','pegawai'));
+    }
+
+    public function update($id){
+        $pegawai = Pegawai::find($id);
+        $pelatihan = Pelatihan::all();
+        $golongan = Golongan::all();
+        return view('pegawai.update',compact('pelatihan','golongan','pegawai'));
+
+    }
+
+    public function updating(Request $request, $id){
+        $pegawai = Pegawai::find($id);
+        $pegawai->update($request->all());
+        return redirect('/pegawai')->with('Success','Data berhasil diubah!!');
+    }
+
+    public function deleting($id){
+        $pegawai = Pegawai::find($id);
+        $pegawai->delete();
+        return redirect('/pegawai')->with('Success','Data berhasil dihapus!!');
 
     }
 

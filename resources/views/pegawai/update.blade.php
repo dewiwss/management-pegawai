@@ -2,7 +2,7 @@
 
 @section('title','Data Pegawai')
 
-@section('nama_halaman','Tambah Data Pegawai')
+@section('nama_halaman','Update Data Pegawai')
 
 @section('content')
 <div class="row mt--7"> 
@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-body">
 
-                <form role="form" action="{{ route('post_datapegawai')}}" method="post">
+                <form role="form" action="/pegawai/{{$pegawai->id}}/updating" method="post">
                     {{csrf_field()}}
                     <h6 class="heading-small text-muted mb-4">Employee information</h6>
                     <div class="pl-lg-4">
@@ -34,13 +34,13 @@
                         <div class="col-lg-6">
                             <div class="form-group focused">
                                 <label class="form-control-label" for="input-nip">NIP</label>
-                                <input type="text" id="input-nip" name="nip" class="form-control form-control-alternative" placeholder="Nomor Induk Pegawai" value="">
+                            <input type="text" id="input-nip" name="nip" class="form-control form-control-alternative" placeholder="Nomor Induk Pegawai" value="{{$pegawai->nip}}">
                             </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-nama">Nama Lengkap</label>
-                            <input type="text" id="input-nama" name="nama" class="form-control form-control-alternative" placeholder="Nama lengkap" value="">
+                        <input type="text" id="input-nama" name="nama" class="form-control form-control-alternative" placeholder="Nama lengkap" value="{{$pegawai->nama}}">
                         </div>
                         </div>
                     </div>
@@ -49,13 +49,13 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-jabatan">Jabatan</label>
-                            <input type="text" id="input-jabatan" name="jabatan" class="form-control form-control-alternative" placeholder="contoh: supervisor" value="">
+                            <input type="text" id="input-jabatan" name="jabatan" class="form-control form-control-alternative" placeholder="contoh: supervisor" value="{{$pegawai->jabatan}}">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-departemen">Departemen</label>
-                            <input type="text" id="input-departemen" name="departemen" class="form-control form-control-alternative" placeholder="contoh: Human Resource" value="">
+                            <input type="text" id="input-departemen" name="departemen" class="form-control form-control-alternative" placeholder="contoh: Human Resource" value="{{$pegawai->departemen}}">
                         </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                             <label for="gol_dgolonganarah">Golongan</label>
-                            <select class="form-control" name="golongan_id" id="golongan">
+                            <select class="form-control" name="golongan_id" id="golongan" >
                                 @foreach ( $golongan as $gol )
                             <option value="{{$gol->id}}">{{$gol->kode_golongan}} - Rp. {{$gol->gaji}}</option>
                                 @endforeach
@@ -80,14 +80,14 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-tempat-lahir">Tempat Lahir</label>
-                            <input type="text" id="input-tempat-lahir" name="tmp_lahir" class="form-control form-control-alternative" placeholder="Ciamis" value="">
+                            <input type="text" id="input-tempat-lahir" name="tmp_lahir" class="form-control form-control-alternative" placeholder="Ciamis" value="{{$pegawai->tmp_lahir}}">
                         </div>
                         </div>
 
                         <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-control-label" for="input-tanggal-lahir">Tanggal Lahir</label>
-                            <input class="form-control datepicker" name="tgl_lahir" placeholder="1999-08-27" type="text" value="">
+                            <input class="form-control datepicker" name="tgl_lahir" placeholder="1999-08-27" type="text" value="{{$pegawai->tgl_lahir}}">
                         </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-agama">Agama</label>
-                            <input type="text" id="input-agama" name="agama" class="form-control form-control-alternative" placeholder="agama">
+                            <input type="text" id="input-agama" name="agama" class="form-control form-control-alternative" placeholder="agama" value="{{$pegawai->agama}}">
                         </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         <div class="col-md-12">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-address">Alamat</label>
-                            <textarea rows="4" name="alamat" class="form-control form-control-alternative" placeholder="Jl. Sukahati No. 6 Kecamatan Sindangrasa 46268"></textarea>
+                            <textarea rows="4" name="alamat" class="form-control form-control-alternative" placeholder="Jl. Sukahati No. 6 Kecamatan Sindangrasa 46268" value="{{$pegawai->alamat}}"></textarea>
                         </div>
                         </div>
                     </div>
@@ -155,13 +155,13 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-city">Email</label>
-                            <input type="email" name="email" id="input-email" class="form-control form-control-alternative" placeholder="email@email.com" value="">
+                            <input type="email" name="email" id="input-email" class="form-control form-control-alternative" placeholder="email@email.com" value="{{$pegawai->email}}">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-hp">No Handphone</label>
-                            <input type="text" name="no_telp" id="input-hp" class="form-control form-control-alternative" placeholder="081xxxx" value="">
+                            <input type="text" name="no_telp" id="input-hp" class="form-control form-control-alternative" placeholder="081xxxx" value="{{$pegawai->no_telp}}">
                         </div>
                         </div>
                     </div>
@@ -172,51 +172,13 @@
                     <div class="pl-lg-4">
                     <div class="form-group focused">
                         <label for="input-pelatihan">Nama Pelatihan</label>
-                        <input type="text" name="pelatihan" id="input-pelatihan" class="form-control form-control-alternative" placeholder="Pelatihan Pemrograman Web" value="">
+                        <input type="text" name="pelatihan" id="input-pelatihan" class="form-control form-control-alternative" placeholder="Pelatihan Pemrograman Web" value="{{$pegawai->pelatihan}}">
                     </div>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary my-4">Tambah</button>
-            
-            {{-- @if(session('Success'))
-            <div class="col-md-4">
-                    <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
-                    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-                        <div class="modal-content bg-gradient-danger">
-                            
-                            <div class="modal-header">
-                                <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            
-                            <div class="modal-body">
-                                
-                                <div class="py-3 text-center">
-                                    <i class="ni ni-bell-55 ni-3x"></i>
-                                    <h4 class="heading mt-4">You should read this!</h4>
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-white">Ok, Got it</button>
-                                <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> 
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                </div>
-            @endif --}}
-
-
-
-                
+                <button type="submit" class="btn btn-primary my-4">Update</button>             
             </div>
             </div>   
         </form>
@@ -225,14 +187,6 @@
     </div>
 </div>
 
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-{{-- <script>
-    $(document).ready(function(){
-        window.setInterval(function () {
-                location.href = "/pegawai";
-        }, 3000);
-    });
-</script> --}}
-            
+
 
 @endsection

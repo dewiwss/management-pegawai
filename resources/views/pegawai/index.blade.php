@@ -4,11 +4,19 @@
 
 @section('nama_halaman','Data Pegawai')
 
-@section('header')
-@endsection
-
 @section('content')
-<button type="button" class="btn btn-success mt--7" data-container="body" data-toggle="popover" data-color="success" data-placement="top" onclick="window.location='{{ url("pegawai/create") }}'">
+
+{{-- @if(session('Success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+<span class="alert-inner--text"><strong>Success!</strong> {{session('Success')}}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif --}}
+
+<button type="button" class="btn btn-success mt--7" data-container="body" data-toggle="popover" data-color="success" data-placement="top" onclick="window.location='{{ url('pegawai/create') }}'">
 Tambah Data Pegawai
 </button>
 
@@ -38,7 +46,7 @@ Tambah Data Pegawai
             @foreach ( $pegawai as $peg)
             <?php $no++ ?>
             <tr>
-            {{-- <td>{{$peg->id}}</td> --}}
+          
             <td>
               {{$no}}
             </td>
@@ -54,9 +62,9 @@ Tambah Data Pegawai
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                        <a class="dropdown-item badge-info" href="#"><i class="ni ni-badge"></i> View</a>
-                        <a class="dropdown-item badge-success" href="#"><i class="ni ni-settings"></i> Update</a>
-                        <a class="dropdown-item badge-danger" href="#"><i class="ni ni-basket"></i> Delete</a>
+                        <a class="dropdown-item badge-info" href="/pegawai/{{$peg->id}}/view_detail"><i class="ni ni-badge"></i> View</a>
+                        <a class="dropdown-item badge-success" href="/pegawai/{{$peg->id}}/update"><i class="ni ni-settings"></i> Update</a>
+                        <a class="dropdown-item badge-danger" href="/pegawai/{{$peg->id}}/delete" onclick="return confirm('Yakin menghapus pegawai bernama {{$peg->nama}}?')"><i class="ni ni-basket"></i> Delete</a>
                     </div>
                 </div>
             </td>

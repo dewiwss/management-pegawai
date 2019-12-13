@@ -29,7 +29,14 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/pegawai','PegawaiController@index');
     //tambah data
     Route::get('/pegawai/create','PegawaiController@ShowFormCreate');
-    Route::post('/pegawai/creating','PegawaiController@creating')->name('post_datapegawai');;
+    Route::post('/pegawai/creating','PegawaiController@creating')->name('post_datapegawai');
+    //view detail data pegawai
+    Route::get('/pegawai/{id}/view_detail','PegawaiController@detail');
+    //update data pegawai
+    Route::get('/pegawai/{id}/update','PegawaiController@update');
+    Route::post('/pegawai/{id}/updating','PegawaiController@updating');
+    //delete data pegawai
+    Route::get('/pegawai/{id}/delete','PegawaiController@deleting');
 
     //home bawaan laravel
     Route::get('/home', 'HomeController@index')->name('home');
