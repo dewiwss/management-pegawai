@@ -32,6 +32,8 @@
   <link href="{{asset('admin/assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{asset('admin/assets/css/argon-dashboard.css?v=1.1.0')}}" rel="stylesheet" />
+  {{-- Icons --}}
+  <link href="{{asset('/assets/js/plugins/dashboard/free/nucleo/css/nucleo.css')}}" rel="stylesheet">
 </head>
 
 <body class="">
@@ -188,6 +190,8 @@
         application: "argon-dashboard-free"
       });
   </script>
+  {{-- datepicker --}}
+  <script src="{{asset('admin/assets/js/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 </body>
 
 </html>

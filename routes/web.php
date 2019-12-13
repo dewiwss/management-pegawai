@@ -17,9 +17,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard',function(){
-    return view('dashboard');
-});
-Route::get('/pegawai','PegawaiController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware'=>'auth'],function(){
+    //menampilkan halaman dashboard
+    Route::get('/dashboard',function(){
+        return view('dashboard');
+    });
+    //Route Data Pegawai
+    //menampilkan halaman data pegawai
+    Route::get('/pegawai','PegawaiController@index');
+    //tambah data
+    Route::get('/pegawai/create','PegawaiController@ShowFormCreate');
+    Route::post('/pegawai/creating','PegawaiController@creating')->name('post_datapegawai');;
+
+    //home bawaan laravel
+    Route::get('/home', 'HomeController@index')->name('home');
+});

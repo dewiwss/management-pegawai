@@ -22,7 +22,7 @@ class CreatePelatihanTable extends Migration
             $table->date('mulai_pelatihan');
             $table->date('akhir_pelatihan');
 
-            // $table->string('pegawai');
+            
 
             $table->timestamps();
         });

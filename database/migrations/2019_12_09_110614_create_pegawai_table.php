@@ -25,13 +25,13 @@ class CreatePegawaiTable extends Migration
             $table->enum('status',['Belum Menikah','Menikah']);
             $table->string('email')->nullable();
             $table->enum('gol_darah', ['O','A','B','AB']);
-            $table->enum('agama', ['Islam','Kristen','Hindu','Buddha']);
-            $table->string('jabatan',50);
-            $table->string('departemen',50);
+            $table->string('agama', 50);
+            $table->string('jabatan',100);
+            $table->string('departemen',100);
             $table->string('pelatihan');
 
             //menghubungkan dengan golongan
-            $table->integer('golongan_id')->unsigned();
+            $table->string('golongan_id');
         
 
 
