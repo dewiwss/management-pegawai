@@ -17,6 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//jika tidak ingin ada menu register
+// Auth::routes(['register'=>false]);
+
+//membuat login sendiri
+Route::get('/user/login','AuthController@ShowFormLogin')->name('login');
+Route::post('/user/user_login','AuthController@UserLogin');
+//logout
+Route::get('/user/logout','AuthController@UserLogout');
 
 
 Route::group(['middleware'=>'auth'],function(){
@@ -41,3 +49,5 @@ Route::group(['middleware'=>'auth'],function(){
     //home bawaan laravel
     Route::get('/home', 'HomeController@index')->name('home');
 });
+
+
