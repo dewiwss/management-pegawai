@@ -6,17 +6,19 @@
 
 @section('content')
 
-{{-- @if(session('Success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
-<span class="alert-inner--text"><strong>Success!</strong> {{session('Success')}}</span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-@endif --}}
 
 <div class="row">
+  <div class="row">
+        @if(session('Success'))
+        <div class="alert alert-success alert-dismissible fade show mt--5" style="center" role="alert">
+        <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+        <span class="alert-inner--text"><strong>Success!</strong> {{session('Success')}}</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        @endif
+  </div>
 <!-- Dark table -->
 <div class="row mt--3">
   <div class="col">

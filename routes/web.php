@@ -47,7 +47,18 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/pegawai/{id}/delete','PegawaiController@deleting');
 
     //Route data golongan
+    //menampilkan halaman data golongan
     Route::get('/golongan','GolonganController@index');
+    //tambah data
+    Route::get('/golongan/create','GolonganController@ShowFormCreate');
+    Route::post('/golongan/creating','GolonganController@creating');
+    //view detail data golongan
+    Route::get('/golongan/{id}/view_detail','GolonganController@detail');
+    //update data golongan
+    Route::get('/golongan/{id}/update','GolonganController@update');
+    Route::post('/golongan/{id}/updating','GolonganController@updating');
+    //delete data golongan
+    Route::get('/golongan/{id}/delete','GolonganController@deleting');
 
 
     //Route data cuti
