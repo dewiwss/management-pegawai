@@ -5,14 +5,17 @@
 @section('nama_halaman','Detail Data Pegawai')
 
 @section('content')
+<button type="button" class="btn btn-secondary btn-sm mt--5" onclick="window.location='{{ url('pegawai') }}'"><i class="ni ni-bold-left"></i> Kembali</button>
 <!-- Header -->
 <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 35%; background-image: url({{asset('admin/assets/img/theme/profile-cover.jpg')}}); background-size: cover; background-position: center top;">
     <!-- Mask -->
+   
     <span class="mask bg-gradient-default opacity-8"></span>
 </div>
 
     <!-- Page content -->
     <div class="container-fluid mt--9">
+       
     <div class="row">
         <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
         <div class="card card-profile shadow">
@@ -52,27 +55,23 @@
             </div>
             <div class="text-center">
                 <h3>
-                Jessica Jones<span class="font-weight-light">, 27</span>
+                {{$pegawai->nama}}<span class="font-weight-light">, {{$pegawai->nip}}</span>
                 </h3>
                 <div class="h5 font-weight-300">
-                <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                <i class="ni location_pin mr-2"></i>{{$pegawai->tmp_lahir}},{{$pegawai->tgl_lahir}}
                 </div>
                 <div class="h5 mt-4">
-                <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                <i class="ni business_briefcase-24 mr-2"></i>{{$pegawai->jabatan}} - {{$pegawai->departemen}}
                 </div>
                 <div>
-                <i class="ni education_hat mr-2"></i>University of Computer Science
+                <i class="ni education_hat mr-2"></i>PT. Praktikum PWEB
                 </div>
                 <hr class="my-4" />
-                <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
-                <a href="#">Show more</a>
             </div>
             </div>
         </div>
         </div>
-        <div class="col-xl-8 order-xl-1">
-            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location='{{ url('pegawai') }}'"><i class="ni ni-bold-left"></i> Kembali</button>
-            
+        <div class="col-xl-8 order-xl-1">            
         <div class="card bg-secondary shadow">
             <div class="card-header bg-white border-0">
             <div class="row align-items-center">
@@ -86,78 +85,148 @@
             </div>
             <div class="card-body">
             <form>
-                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <h6 class="heading-small text-muted mb-4">EMPLOYEE INFORMATION</h6>
                 <div class="pl-lg-4">
-                <div class="row">
-                    <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group focused">
+                                <label class="form-control-label" for="input-nip">NIP</label>
+                            <input type="text" id="input-nip" name="nip" class="form-control form-control-alternative" placeholder="Nomor Induk Pegawai" value="{{$pegawai->nip}}" disabled>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-nama">Nama Lengkap</label>
+                            <input type="text" id="input-nama" name="nama" class="form-control form-control-alternative" placeholder="Nama lengkap" value="{{$pegawai->nama}}" disabled>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-jabatan">Jabatan</label>
+                        <input type="text" id="input-jabatan" name="jabatan" class="form-control form-control-alternative" placeholder="contoh: supervisor" value="{{$pegawai->jabatan}}" disabled>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-departemen">Departemen</label>
+                        <input type="text" id="input-departemen" name="departemen" class="form-control form-control-alternative" placeholder="contoh: Human Resource" value="{{$pegawai->departemen}}" disabled>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                            <label for="gol_dgolonganarah">Golongan</label>
+                            <input type="text" name="golongan_id" id="golongan" class="form-control form-control-alternative" placeholder="contoh: Human Resource" value="{{$pegawai->golongan->kode_golongan}} - Rp. {{$pegawai->golongan->gaji}}" disabled>
+                            </div>
+                        </div>
                     </div>
                     </div>
-                    <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+                    <hr class="my-4">
+                    <!-- About -->
+                    <h6 class="heading-small text-muted mb-4">About</h6>
+                    <div class="pl-lg-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-tempat-lahir">Tempat Lahir</label>
+                        <input type="text" id="input-tempat-lahir" name="tmp_lahir" class="form-control form-control-alternative" placeholder="Ciamis" value="{{$pegawai->tmp_lahir}}" disabled>
+                        </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-tanggal-lahir">Tanggal Lahir</label>
+                        <input class="form-control datepicker" name="tgl_lahir" placeholder="1999-08-27" type="text" value="{{$pegawai->tgl_lahir}}" disabled>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-group">
+                        <label for="gol_darah">Golongan Darah</label>
+                        <input class="form-control datepicker" name="gol_darah" id="gol_darah" placeholder="1999-08-27" type="text" value="{{$pegawai->gol_darah}}" disabled>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-agama">Agama</label>
+                        <input type="text" id="input-agama" name="agama" class="form-control form-control-alternative" placeholder="agama" value="{{$pegawai->agama}}" disabled>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group focused">
+                            <label class="form-control-label" for="input-jk">Jenis Kelamin</label>
+                            <div class="custom-control custom-radio mb-3">
+                                <input name="jk" class="custom-control-input" id="Laki-Laki" type="radio" value="Laki-Laki">
+                                <label class="custom-control-label" for="Laki-Laki">Laki-Laki</label>
+                            </div>
+                            <div class="custom-control custom-radio mb-3">
+                                <input name="jk" class="custom-control-input" id="Perempuan" type="radio" value="Perempuan">
+                                <label class="custom-control-label" for="Perempuan" >Perempuan</label>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group focused">
+                            <label class="form-control-label" for="input-status">Status</label>
+                            <div class="custom-control custom-radio mb-3">
+                                <input name="status" class="custom-control-input" id="Menikah" type="radio" value="Menikah">
+                                <label class="custom-control-label" for="Menikah" ">Menikah</label>
+                            </div>
+                            <div class="custom-control custom-radio mb-3">
+                                <input name="status" class="custom-control-input" id="Belum Menikah" type="radio" value="Belum Menikah">
+                                <label class="custom-control-label" for="Belum Menikah" >Belum Menikah</label>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <hr class="my-4">
+                    <!-- Address -->
+                    <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                    <div class="pl-lg-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-address">Alamat</label>
+                        <input rows="4" name="alamat" class="form-control form-control-alternative" placeholder="Jl. Sukahati No. 6 Kecamatan Sindangrasa 46268" value="{{$pegawai->alamat}}" disabled>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-city">Email</label>
+                        <input type="email" name="email" id="input-email" class="form-control form-control-alternative" placeholder="email@email.com" value="{{$pegawai->email}}" disabled>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="form-group focused">
+                            <label class="form-control-label" for="input-hp">No Handphone</label>
+                        <input type="text" name="no_telp" id="input-hp" class="form-control form-control-alternative" placeholder="081xxxx" value="{{$pegawai->no_telp}}" disabled>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <hr class="my-4">
+                    <!-- Description -->
+                    <h6 class="heading-small text-muted mb-4">Experience</h6>
+                    <div class="pl-lg-4">
+                    <div class="form-group focused">
+                        <label for="input-pelatihan">Nama Pelatihan</label>
+                    <input type="text" name="pelatihan" id="input-pelatihan" class="form-control form-control-alternative" placeholder="Pelatihan Pemrograman Web" value="{{$pegawai->pelatihan}}" disabled>
                     </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
-                    </div>
-                    </div>
-                    <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <hr class="my-4" />
-                <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Contact information</h6>
-                <div class="pl-lg-4">
-                <div class="row">
-                    <div class="col-md-12">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                    </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-city">City</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
-                    </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-country">Country</label>
-                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
-                    </div>
-                    </div>
-                    <div class="col-lg-4">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-country">Postal code</label>
-                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <hr class="my-4" />
-                <!-- Description -->
-                <h6 class="heading-small text-muted mb-4">About me</h6>
-                <div class="pl-lg-4">
-                <div class="form-group">
-                    <label>About Me</label>
-                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
-                </div>
+            </div>
+                
+            </div>
                 </div>
             </form>
             </div>
