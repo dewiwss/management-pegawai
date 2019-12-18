@@ -71,14 +71,16 @@
         </div>
         </div>
         <div class="col-xl-8 order-xl-1">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location='{{ url('pegawai') }}'"><i class="ni ni-bold-left"></i> Kembali</button>
+            
         <div class="card bg-secondary shadow">
             <div class="card-header bg-white border-0">
             <div class="row align-items-center">
                 <div class="col-8">
-                <h3 class="mb-0">My account</h3>
+                <h3 class="mb-0">{{$pegawai->nama}}'s Profile Detail</h3>
                 </div>
                 <div class="col-4 text-right">
-                <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+                <a href="/pegawai/{{$pegawai->id}}/update" class="btn btn-sm btn-primary">Edit Profil</a>
                 </div>
             </div>
             </div>

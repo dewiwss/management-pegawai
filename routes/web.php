@@ -46,6 +46,17 @@ Route::group(['middleware'=>'auth'],function(){
     //delete data pegawai
     Route::get('/pegawai/{id}/delete','PegawaiController@deleting');
 
+    //Route data golongan
+    Route::get('/golongan','GolonganController@index');
+
+
+    //Route data cuti
+    Route::get('/cuti','CutiController@index');
+
+
+    //Route data pelatihan
+    Route::get('/pelatihan','PelatihanController@index');
+
     //home bawaan laravel
     Route::get('/home', 'HomeController@index')->name('home');
 });

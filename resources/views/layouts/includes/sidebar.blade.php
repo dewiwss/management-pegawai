@@ -9,13 +9,18 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link " href="/department">
-    <i class="ni ni-single-02 text-yellow"></i> Departement
+    <a class="nav-link " href="/golongan">
+    <i class="ni ni-single-02 text-yellow"></i> Golongan
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link " href="user_profile">
-    <i class="ni ni-single-02 text-yellow"></i> User profile
+    <a class="nav-link " href="/cuti">
+    <i class="ni ni-single-02 text-yellow"></i> Data Cuti
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link " href="/pelatihan">
+    <i class="ni ni-single-02 text-yellow"></i> Pelatihan
     </a>
 </li>
 </ul>
