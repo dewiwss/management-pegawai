@@ -14,6 +14,8 @@ class PegawaiController extends Controller
     public function index(Request $request){
         if ($request->has('cari')){
             $pegawai = Pegawai::where('nama','LIKE','%'.$request->cari.'%')->orderby('nama','asc');
+            // $pegawai = Pegawai::where('jabatan','LIKE','%'.$request->cari.'%')->orderby('nama','asc');
+            // $pegawai = Pegawai::where('departemen','LIKE','%'.$request->cari.'%')->orderby('nama','asc');
         }else{
             $pegawai =  Pegawai::orderby('nama','asc');
         }

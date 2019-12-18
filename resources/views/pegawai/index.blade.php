@@ -16,13 +16,28 @@
 </div>
 @endif --}}
 
-<button type="button" class="btn btn-success mt--7" data-container="body" data-toggle="popover" data-color="success" data-placement="top" onclick="window.location='{{ url('pegawai/create') }}'">
-Tambah Data Pegawai
-</button>
-
+<div class="row">
 <!-- Dark table -->
 <div class="row mt--3">
   <div class="col">
+    <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-color="success" data-placement="top" onclick="window.location='{{ url('pegawai/create') }}'">
+    Tambah Data Pegawai
+    </button>
+  </div>
+  <div class="col">
+  <div class="card-tools float-right">
+    <form action="/pegawai" method="get">
+    <div class="input-group input-group-sm" style="width: 150px;">
+    <input type="text" class="form-control float-right" placeholder="Search" name="cari">
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+    </div>
+    </div>
+    </form>
+  </div>
+  </div>
+  {{-- tabel --}}
+  <div class="col mt-2">
     <div class="card bg-default shadow">
       <div class="card-header bg-transparent border-0">
         {{-- <h3 class="text-white mb-0">Tabel</h3> --}}
@@ -89,4 +104,6 @@ Tambah Data Pegawai
     </div>
   </div>
 </div>
+</div>
+
 @endsection

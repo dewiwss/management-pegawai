@@ -34,13 +34,13 @@
                         <div class="col-lg-6">
                             <div class="form-group focused">
                                 <label class="form-control-label" for="input-nip">NIP</label>
-                                <input type="text" id="input-nip" name="nip" class="form-control form-control-alternative" placeholder="Nomor Induk Pegawai" value="">
+                                <input required type="text" id="input-nip" name="nip" class="form-control form-control-alternative" placeholder="Nomor Induk Pegawai" value="">
                             </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-nama">Nama Lengkap</label>
-                            <input type="text" id="input-nama" name="nama" class="form-control form-control-alternative" placeholder="Nama lengkap" value="">
+                            <input required required type="text" id="input-nama" name="nama" class="form-control form-control-alternative" placeholder="Nama lengkap" value="">
                         </div>
                         </div>
                     </div>
@@ -49,13 +49,13 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-jabatan">Jabatan</label>
-                            <input type="text" id="input-jabatan" name="jabatan" class="form-control form-control-alternative" placeholder="contoh: supervisor" value="">
+                            <input required type="text" id="input-jabatan" name="jabatan" class="form-control form-control-alternative" placeholder="contoh: supervisor" value="">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-departemen">Departemen</label>
-                            <input type="text" id="input-departemen" name="departemen" class="form-control form-control-alternative" placeholder="contoh: Human Resource" value="">
+                            <input required type="text" id="input-departemen" name="departemen" class="form-control form-control-alternative" placeholder="contoh: Human Resource" value="">
                         </div>
                         </div>
                     </div>
@@ -80,14 +80,14 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-tempat-lahir">Tempat Lahir</label>
-                            <input type="text" id="input-tempat-lahir" name="tmp_lahir" class="form-control form-control-alternative" placeholder="Ciamis" value="">
+                            <input required type="text" id="input-tempat-lahir" name="tmp_lahir" class="form-control form-control-alternative" placeholder="Ciamis" value="">
                         </div>
                         </div>
 
                         <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-control-label" for="input-tanggal-lahir">Tanggal Lahir</label>
-                            <input class="form-control datepicker" name="tgl_lahir" placeholder="1999-08-27" type="text" value="">
+                            <input required class="form-control datepicker" name="tgl_lahir" placeholder="1999-08-27" type="text" value="">
                         </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-agama">Agama</label>
-                            <input type="text" id="input-agama" name="agama" class="form-control form-control-alternative" placeholder="agama">
+                            <input required type="text" id="input-agama" name="agama" class="form-control form-control-alternative" placeholder="agama">
                         </div>
                         </div>
                     </div>
@@ -115,11 +115,11 @@
                             <div class="form-group focused">
                             <label class="form-control-label" for="input-jk">Jenis Kelamin</label>
                             <div class="custom-control custom-radio mb-3">
-                                <input name="jk" class="custom-control-input" id="Laki-Laki" type="radio" value="Laki-Laki">
+                                <input required name="jk" class="custom-control-input" id="Laki-Laki" type="radio" value="Laki-Laki">
                                 <label class="custom-control-label" for="Laki-Laki">Laki-Laki</label>
                             </div>
                             <div class="custom-control custom-radio mb-3">
-                                <input name="jk" class="custom-control-input" id="Perempuan" type="radio" value="Perempuan">
+                                <input required name="jk" class="custom-control-input" id="Perempuan" type="radio" value="Perempuan">
                                 <label class="custom-control-label" for="Perempuan" >Perempuan</label>
                             </div>
                             </div>
@@ -128,11 +128,11 @@
                             <div class="form-group focused">
                             <label class="form-control-label" for="input-status">Status</label>
                             <div class="custom-control custom-radio mb-3">
-                                <input name="status" class="custom-control-input" id="Menikah" type="radio" value="Menikah">
+                                <input required name="status" class="custom-control-input" id="Menikah" type="radio" value="Menikah">
                                 <label class="custom-control-label" for="Menikah" ">Menikah</label>
                             </div>
                             <div class="custom-control custom-radio mb-3">
-                                <input name="status" class="custom-control-input" id="Belum Menikah" type="radio" value="Belum Menikah">
+                                <input required name="status" class="custom-control-input" id="Belum Menikah" type="radio" value="Belum Menikah">
                                 <label class="custom-control-label" for="Belum Menikah" >Belum Menikah</label>
                             </div>
                             </div>
@@ -155,13 +155,13 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-city">Email</label>
-                            <input type="email" name="email" id="input-email" class="form-control form-control-alternative" placeholder="email@email.com" value="">
+                            <input required type="email" name="email" id="input-email" class="form-control form-control-alternative" placeholder="email@email.com" value="">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-hp">No Handphone</label>
-                            <input type="text" name="no_telp" id="input-hp" class="form-control form-control-alternative" placeholder="081xxxx" value="">
+                            <input required type="text" name="no_telp" id="input-hp" class="form-control form-control-alternative" placeholder="081xxxx" value="">
                         </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                     <div class="pl-lg-4">
                     <div class="form-group focused">
                         <label for="input-pelatihan">Nama Pelatihan</label>
-                        <input type="text" name="pelatihan" id="input-pelatihan" class="form-control form-control-alternative" placeholder="Pelatihan Pemrograman Web" value="">
+                        <input required type="text" name="pelatihan" id="input-pelatihan" class="form-control form-control-alternative" placeholder="Pelatihan Pemrograman Web" value="">
                     </div>
                     </div>
                 </div>
