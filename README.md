@@ -1,4 +1,4 @@
-<h1>Sistem informasi Managaement Data Pegawai<h1><br>
+<h1>Sistem informasi Management Data Pegawai<h1><br>
    <h5>Contributor :<h5>
      <h6>Dewi Wulan Sari 177006021<h6>
        <h6> Doni Agistira 177006075<h6><br>
