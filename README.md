@@ -2,6 +2,9 @@
    <h5>Contributor :<h5>
      <h6>Dewi Wulan Sari 177006021<h6>
        <h6> Doni Agistira 177006075<h6><br>
+ <hr>
+ <p>username: admin@admin.com<p><br>
+ <p>password : admin1234<p>
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
