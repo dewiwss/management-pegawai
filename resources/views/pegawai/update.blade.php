@@ -87,7 +87,7 @@
                         <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-control-label" for="input-tanggal-lahir">Tanggal Lahir</label>
-                            <input required class="form-control datepicker" name="tgl_lahir" placeholder="1999-08-27" type="text" value="{{$pegawai->tgl_lahir}}">
+                            <input required class="form-control datepicker" name="tgl_lahir" placeholder="1999-08-27" type="date" value="{{$pegawai->tgl_lahir}}">
                         </div>
                         </div>
                     </div>
