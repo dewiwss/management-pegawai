@@ -59,13 +59,13 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-tgl_pengajuan">Tanggal Pengajuan</label>
-                            <input type="date" id="input-tgl_pengajuan" name="tgl_pengajuan" class="form-control form-control-alternative" placeholder="Tanggal Pengajuan">
+                            <input required type="date" id="input-tgl_pengajuan" name="tgl_pengajuan" class="form-control form-control-alternative" placeholder="Tanggal Pengajuan">
                         </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group focused">
                                 <label class="form-control-label" for="input-hari">Jumlah hari</label>
-                                <input type="text" id="input-hari" name="hari" class="form-control form-control-alternative" placeholder="Lama Cuti ... hari" value="">
+                                <input required type="text" id="input-hari" name="hari" class="form-control form-control-alternative" placeholder="Lama Cuti ... hari" value="">
                             </div>
                         </div>
                     </div>                    

@@ -25,8 +25,8 @@ Route::get('/user/login','AuthController@ShowFormLogin')->name('login');
 Route::post('/user/user_login','AuthController@UserLogin');
 
 //membuat register sendiri
-Route::get('/user/register','AuthController@ShowFormRegister')->name('register');
-Route::post('/user/user_register','AuthController@UserRegister');
+// Route::get('/user/register','AuthController@ShowFormRegister')->name('register');
+// Route::post('/user/user_register','AuthController@UserRegister');
 
 //logout
 Route::get('/user/logout','AuthController@UserLogout');

@@ -34,25 +34,25 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-kode-pelatihan">Kode Pelatihan</label>
-                        <input type="text" id="input-kode-pelatihan" name="kode_pelatihan" class="form-control form-control-alternative" placeholder="Kode Pelatihan" value="{{$pelatihan->kode_pelatihan}}">
+                        <input required type="text" id="input-kode-pelatihan" name="kode_pelatihan" class="form-control form-control-alternative" placeholder="Kode Pelatihan" value="{{$pelatihan->kode_pelatihan}}">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-nama-pelatihan">Nama Pelatihan</label>
-                        <input type="text" id="input-nama-pelatihan" name="nama_pelatihan" class="form-control form-control-alternative" placeholder="Nama Pelatihan" value="{{$pelatihan->nama_pelatihan}}">
+                        <input required type="text" id="input-nama-pelatihan" name="nama_pelatihan" class="form-control form-control-alternative" placeholder="Nama Pelatihan" value="{{$pelatihan->nama_pelatihan}}">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-tempat">Tempat Pelatihan</label>
-                        <input type="text" id="input-tempat" name="tempat" class="form-control form-control-alternative" placeholder="Tempat Pelatihan" value="{{$pelatihan->tempat}}">
+                        <input required type="text" id="input-tempat" name="tempat" class="form-control form-control-alternative" placeholder="Tempat Pelatihan" value="{{$pelatihan->tempat}}">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-instruktur">Instruktur Pelatihan</label>
-                        <input type="text" id="input-instruktur" name="instruktur" class="form-control form-control-alternative" placeholder="Instruktur Pelatihan" value="{{$pelatihan->instruktur}}">
+                        <input required type="text" id="input-instruktur" name="instruktur" class="form-control form-control-alternative" placeholder="Instruktur Pelatihan" value="{{$pelatihan->instruktur}}">
                         </div>
                         </div>                  
                     </div>
@@ -60,13 +60,13 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-mulai_pelatihan">Mulai Pelatihan</label>
-                        <input type="date" id="input-mulai_pelatihan" name="mulai_pelatihan" class="form-control form-control-alternative" placeholder="Mulai Pelatihan" value="{{$pelatihan->mulai_pelatihan}}">
+                        <input required type="date" id="input-mulai_pelatihan" name="mulai_pelatihan" class="form-control form-control-alternative" placeholder="Mulai Pelatihan" value="{{$pelatihan->mulai_pelatihan}}">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-akhir_pelatihan">Akhir Pelatihan</label>
-                            <input type="date" id="input-akhir_pelatihan" name="akhir_pelatihan" class="form-control form-control-alternative" placeholder="Akhir Pelatihan" value="{{$pelatihan->akhir_pelatihan}}">
+                            <input required type="date" id="input-akhir_pelatihan" name="akhir_pelatihan" class="form-control form-control-alternative" placeholder="Akhir Pelatihan" value="{{$pelatihan->akhir_pelatihan}}">
                         </div>
                         </div>
                     </div>                    

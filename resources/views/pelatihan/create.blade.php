@@ -34,25 +34,25 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-kode-pelatihan">Kode Pelatihan</label>
-                            <input type="text" id="input-kode-pelatihan" name="kode_pelatihan" class="form-control form-control-alternative" placeholder="Kode Pelatihan">
+                            <input required type="text" id="input-kode-pelatihan" name="kode_pelatihan" class="form-control form-control-alternative" placeholder="Kode Pelatihan">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-nama-pelatihan">Nama Pelatihan</label>
-                            <input type="text" id="input-nama-pelatihan" name="nama_pelatihan" class="form-control form-control-alternative" placeholder="Nama Pelatihan">
+                            <input required type="text" id="input-nama-pelatihan" name="nama_pelatihan" class="form-control form-control-alternative" placeholder="Nama Pelatihan">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-tempat">Tempat Pelatihan</label>
-                            <input type="text" id="input-tempat" name="tempat" class="form-control form-control-alternative" placeholder="Tempat Pelatihan">
+                            <input required type="text" id="input-tempat" name="tempat" class="form-control form-control-alternative" placeholder="Tempat Pelatihan">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-instruktur">Instruktur Pelatihan</label>
-                            <input type="text" id="input-instruktur" name="instruktur" class="form-control form-control-alternative" placeholder="Instruktur Pelatihan">
+                            <input required type="text" id="input-instruktur" name="instruktur" class="form-control form-control-alternative" placeholder="Instruktur Pelatihan">
                         </div>
                         </div>                  
                     </div>
@@ -60,13 +60,13 @@
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-mulai_pelatihan">Mulai Pelatihan</label>
-                            <input type="date" id="input-mulai_pelatihan" name="mulai_pelatihan" class="form-control form-control-alternative" placeholder="Mulai Pelatihan">
+                            <input required type="date" id="input-mulai_pelatihan" name="mulai_pelatihan" class="form-control form-control-alternative" placeholder="Mulai Pelatihan">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-akhir_pelatihan">Akhir Pelatihan</label>
-                            <input type="date" id="input-akhir_pelatihan" name="akhir_pelatihan" class="form-control form-control-alternative" placeholder="Akhir Pelatihan">
+                            <input required type="date" id="input-akhir_pelatihan" name="akhir_pelatihan" class="form-control form-control-alternative" placeholder="Akhir Pelatihan">
                         </div>
                         </div>
                     </div>                    

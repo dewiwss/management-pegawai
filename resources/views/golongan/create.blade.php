@@ -35,13 +35,13 @@
                         <div class="col-lg-6">
                             <div class="form-group focused">
                                 <label class="form-control-label" for="input-id">ID</label>
-                                <input type="text" id="input-id" name="kode_golongan" class="form-control form-control-alternative" placeholder="Kode Golongan" value="">
+                                <input required type="text" id="input-id" name="kode_golongan" class="form-control form-control-alternative" placeholder="Kode Golongan" value="">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                             <label for="gaji">Gaji</label>
-                            <input type="text" id="gaji" name="gaji" class="form-control form-control-alternative" placeholder="Gaji" value="">
+                            <input required type="text" id="gaji" name="gaji" class="form-control form-control-alternative" placeholder="Gaji" value="">
                             </div>
                         </div>
                     </div>
