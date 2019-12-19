@@ -8,11 +8,6 @@ use App\Pelatihan;
 
 class PelatihanController extends Controller
 {
-    // public function index(){
-    //     return view('pelatihan.index');
-
-    // }
-
     public function index(Request $request){
         if ($request->has('cari')){
             $pelatihan = Pelatihan::where('nama_pelatihan','LIKE','%'.$request->cari.'%')->orderby('kode_pelatihan','desc');

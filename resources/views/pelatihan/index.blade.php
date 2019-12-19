@@ -102,5 +102,4 @@ Tambah Data Pelatihan
 
 </div>
 </div>
-</div>
 @endsection

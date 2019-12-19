@@ -8,9 +8,6 @@ use App\Cuti;
 
 class CutiController extends Controller
 {
-    // public function index(){
-    //     return view('cuti.index');
-    // }
 
     public function index(Request $request){
         if ($request->has('cari')){
