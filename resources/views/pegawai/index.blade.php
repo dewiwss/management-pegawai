@@ -7,7 +7,6 @@
 @section('content')
 
 
-<div class="row">
   <div class="row">
         @if(session('Success'))
         <div class="alert alert-success alert-dismissible fade show mt--5" style="center" role="alert">
@@ -105,7 +104,6 @@
       
     </div>
   </div>
-</div>
 </div>
 
 @endsection

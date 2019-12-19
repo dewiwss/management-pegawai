@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title','Data Pegawai')
+@section('title','Data Golongan')
 
-@section('nama_halaman','Update Data Pegawai')
+@section('nama_halaman','Update Data Golongan')
 
 @section('content')
 <div class="row mt--7"> 

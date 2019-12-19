@@ -23,6 +23,11 @@ Auth::routes();
 //membuat login sendiri
 Route::get('/user/login','AuthController@ShowFormLogin')->name('login');
 Route::post('/user/user_login','AuthController@UserLogin');
+
+//membuat register sendiri
+Route::get('/user/register','AuthController@ShowFormRegister')->name('register');
+Route::post('/user/user_register','AuthController@UserRegister');
+
 //logout
 Route::get('/user/logout','AuthController@UserLogout');
 
@@ -62,11 +67,35 @@ Route::group(['middleware'=>'auth'],function(){
 
 
     //Route data cuti
+    //menampilkan halaman data cuti
     Route::get('/cuti','CutiController@index');
+    //tambah data
+    Route::get('/cuti/create','CutiController@ShowFormCreate');
+    Route::post('/cuti/creating','CutiController@creating');
+    //view detail data cuti
+    Route::get('/cuti/{id}/view_detail','CutiController@detail');
+    //update data cuti
+    Route::get('/cuti/{id}/update','CutiController@update');
+    Route::post('/cuti/{id}/updating','CutiController@updating');
+    //delete data cuti
+    Route::get('/cuti/{id}/delete','CutiController@deleting');
 
 
     //Route data pelatihan
+    //menampilkan halaman data pelatihan
     Route::get('/pelatihan','PelatihanController@index');
+    //tambah data
+    Route::get('/pelatihan/create','PelatihanController@ShowFormCreate');
+    Route::post('/pelatihan/creating','PelatihanController@creating');
+    //view detail data pelatihan
+    Route::get('/pelatihan/{id}/view_detail','PelatihanController@detail');
+    //update data pelatihan
+    Route::get('/pelatihan/{id}/update','PelatihanController@update');
+    Route::post('/pelatihan/{id}/updating','PelatihanController@updating');
+    //delete data pelatihan
+    Route::get('/pelatihan/{id}/delete','PelatihanController@deleting');
+
+
 
     //home bawaan laravel
     Route::get('/home', 'HomeController@index')->name('home');

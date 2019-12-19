@@ -28,42 +28,39 @@ class GolonganController extends Controller
         //belum diedit
     public function ShowFormCreate(){
         $pegawai = Pegawai::all();
-        $pelatihan = Pelatihan::all();
         $golongan = Golongan::all();
-        return view('pegawai.create',compact('pelatihan','golongan','pegawai'));
+        return view('golongan.create',compact('golongan','pegawai'));
     }
     public function creating(Request $request){
-        $pegawai=$request->all();
-        Pegawai::create($pegawai);
-        return redirect('/pegawai')->with('Success','Data berhasil disimpan!!!');
+        $golongan=$request->all();
+        Golongan::create($golongan);
+        return redirect('/golongan')->with('Success','Data berhasil disimpan!!!');
 
     }
 
     public function detail($id){
-        $pegawai = Pegawai::find($id);
-        $pelatihan = Pelatihan::all();
-        $golongan = Golongan::all();
-        return view('pegawai.detail',compact('pelatihan','golongan','pegawai'));
+        $golongan = Golongan::find($id);
+        $pegawai = Pegawai::all();
+        return view('golongan.detail',compact('golongan','pegawai'));
     }
 
     public function update($id){
-        $pegawai = Pegawai::find($id);
-        $pelatihan = Pelatihan::all();
-        $golongan = Golongan::all();
-        return view('pegawai.update',compact('pelatihan','golongan','pegawai'));
+        $golongan = Golongan::find($id);
+        $pegawai = Pegawai::all();
+        return view('golongan.update',compact('golongan','pegawai'));
 
     }
 
     public function updating(Request $request, $id){
-        $pegawai = Pegawai::find($id);
-        $pegawai->update($request->all());
-        return redirect('/pegawai')->with('Success','Data berhasil diubah!!');
+        $golongan = Golongan::find($id);
+        $golongan->update($request->all());
+        return redirect('/golongan')->with('Success','Data berhasil diubah!!');
     }
 
     public function deleting($id){
-        $pegawai = Pegawai::find($id);
-        $pegawai->delete();
-        return redirect('/pegawai')->with('Success','Data berhasil dihapus!!');
+        $golongan = Golongan::find($id);
+        $golongan->delete();
+        return redirect('/golongan')->with('Success','Data berhasil dihapus!!');
 
     }
 

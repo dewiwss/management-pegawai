@@ -32,4 +32,15 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/user/login');
     }
+
+    public function ShowFormRegister(){
+        if(Auth::check())
+            return redirect('/dashboard');
+        else
+            return view('user.register');
+    }
+
+    public function UserRegister(Request $request){
+
+    }
 }
